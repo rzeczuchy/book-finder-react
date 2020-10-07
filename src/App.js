@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import { BookList, SearchForm } from "./components";
 import "./css/index.css";
 
+const BOOKS_API_KEY = process.env.REACT_APP_GOOGLE_API_KEY;
+
 const getBooks = () => [
   {
     cover: null,
@@ -20,8 +22,8 @@ const App = () => {
 
   const onSearch = (query) => {
     setBooks(() => {
-        // return books from the API response here
-        console.log(query);
+      // return books from the API response here
+      console.log(query);
       return getBooks();
     });
   };
