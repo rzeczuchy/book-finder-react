@@ -15,12 +15,8 @@ body, html {
   flex-direction: column; }
 
 .book-article {
-  margin: 0.2em 0;
-  padding: 1em;
   height: 8em;
-  display: flex;
-  border: 1px solid #999;
-  border-radius: 1em; }
+  display: flex; }
   .book-article__cover {
     height: 100%;
     width: auto; }
@@ -29,5 +25,16 @@ body, html {
     width: 100%; }
   .book-article__title {
     color: #f06; }
+
+.card, .book-list, .book-article, .search-form {
+  padding: 1em;
+  border: 1px solid #999;
+  border-radius: 1em; }
+
+.search-form {
+  max-width: 45em;
+  margin: 0 auto; }
+  .search-form input {
+    display: block; }
 
 /*# sourceMappingURL=index.css.map */

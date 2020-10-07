@@ -1,5 +1,5 @@
-import React from "react";
-import { BookList } from "./components";
+import React, { Component } from "react";
+import { BookList, SearchForm } from "./components";
 import "./css/index.css";
 
 const books = [
@@ -15,12 +15,15 @@ const books = [
   },
 ];
 
-const App = (props) => {
-  return (
-    <>
-      <BookList books={books} />
-    </>
-  );
-};
+class App extends Component {
+  render() {
+    return (
+      <>
+        <SearchForm />
+        <BookList books={books} />
+      </>
+    );
+  }
+}
 
 export default App;
