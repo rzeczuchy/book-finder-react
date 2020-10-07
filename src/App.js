@@ -2,7 +2,7 @@ import React from "react";
 import { BookArticle } from "./components";
 import "./css/index.css";
 
-function App() {
+const App = (props) => {
   return (
     <>
       <BookArticle />
