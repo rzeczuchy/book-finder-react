@@ -1,8 +1,8 @@
-import React, { Component } from "react";
+import React, { useState } from "react";
 import { BookList, SearchForm } from "./components";
 import "./css/index.css";
 
-const books = [
+const getBooks = () => [
   {
     cover: null,
     title: "book1",
@@ -15,15 +15,23 @@ const books = [
   },
 ];
 
-class App extends Component {
-  render() {
-    return (
-      <>
-        <SearchForm />
-        <BookList books={books} />
-      </>
-    );
-  }
-}
+const App = () => {
+  const [books, setBooks] = useState(getBooks());
+
+  const onSearch = (query) => {
+    setBooks(() => {
+        // return books from the API response here
+        console.log(query);
+      return getBooks();
+    });
+  };
+
+  return (
+    <>
+      <SearchForm onSubmitted={onSearch} />
+      <BookList books={books} />
+    </>
+  );
+};
 
 export default App;
