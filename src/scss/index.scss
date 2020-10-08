@@ -4,6 +4,7 @@ $font-stack: "Montserrat", sans-serif;
 $light: #fff;
 $dark: #333;
 $primary: #f06;
+$highlight: lighten($primary, 20);
 $muted: #999;
 
 * {
@@ -13,50 +14,68 @@ $muted: #999;
   // border: 1px solid;
 }
 
-body, html {
-    font-family: $font-stack;
-    color: $dark;
+body,
+html {
+  font-family: $font-stack;
+  color: $dark;
+}
+
+a {
+  color: $primary;
+  text-decoration: none;
+}
+
+a:hover {
+  color: $highlight;
+  text-decoration: none;
 }
 
 .book-list {
-    @extend .card;
-    max-width: 45em;
-    margin: 0 auto;
-    display: flex;
-    flex-direction: column;
+  @extend .card;
+  max-width: 45em;
+  margin: 1em auto;
+  display: flex;
+  flex-direction: column;
+
+  hr {
+    border: none;
+    height: 1px;
+    background-color: $muted;
+  }
 }
 
 .book-article {
-    @extend .card;
-    height: 8em;
-    display: flex;
+  @extend .card;
+  min-height: 8em;
+  margin: 0.5em 0;
+  display: flex;
 
-    &__cover {
-        height: 100%;
-        width: auto;
-    }
+  &__cover {
+    width: 25%;
+    height: auto;
+    max-height: 100%;
+  }
 
-    &__details {
-        margin: 0 1em;
-        width: 100%;
-    }
+  &__details {
+    margin: 0 1em;
+    width: 100%;
+  }
 
-    &__title {
-        color: $primary;
-    }
+  &__title {
+    color: $primary;
+  }
 }
+
 .card {
-    padding: 1em;
-    border: 1px solid $muted;
-    border-radius: 1em;
+  padding: 1em;
 }
 
 .search-form {
-    @extend .card;
-    max-width: 45em;
-    margin: 0 auto;
+  @extend .card;
+  max-width: 45em;
+  margin: 0 auto;
 
-    input {
-        display: block;
-    }
+  input {
+    display: block;
+  }
 }
