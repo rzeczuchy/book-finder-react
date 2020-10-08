@@ -18,22 +18,26 @@ const getThumbnail = (book) => {
 };
 
 const BookList = (props) => {
-  return (
-    <div className="book-list">
-      {props.books.map((book, i) => {
-        return (
-          <BookArticle
-            key={i}
-            cover={getThumbnail(book)}
-            title={book.volumeInfo.title}
-            infoLink={book.volumeInfo.infoLink}
-            authors={joinAuthors(book.volumeInfo.authors)}
-            description={shortenDescription(book.volumeInfo.description, 160)}
-          />
-        );
-      })}
-    </div>
-  );
+  if (Array.isArray(props.books)) {
+    return (
+      <div className="book-list">
+        {props.books.map((book, i) => {
+          return (
+            <BookArticle
+              key={i}
+              cover={getThumbnail(book)}
+              title={book.volumeInfo.title}
+              infoLink={book.volumeInfo.infoLink}
+              authors={joinAuthors(book.volumeInfo.authors)}
+              description={shortenDescription(book.volumeInfo.description, 160)}
+            />
+          );
+        })}
+      </div>
+    );
+  } else {
+    return <></>;
+  }
 };
 
 export default BookList;
