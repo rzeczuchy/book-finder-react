@@ -5,18 +5,18 @@ const BookArticle = (props) => {
     <>
       <article className="book-article">
         <img
-          className="book-article__cover"
+          className="book-cover"
           src={props.cover}
           alt="Book cover"
         ></img>
-        <div className="book-article__details">
-          <h1 className="book-article__title">
+        <div className="book-details">
+          <h1 className="book-title">
             <a href={props.infoLink} rel="noopener noreferrer" target="_blank">
               {props.title}
             </a>
           </h1>
-          <p className="book-article__authors">{props.authors}</p>
-          <p className="book-article__description">{props.description}</p>
+          <p className="book-authors">{props.authors}</p>
+          <p className="book-description">{props.description}</p>
         </div>
       </article>
       <hr />

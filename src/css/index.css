@@ -10,14 +10,15 @@ html {
   color: #333; }
 
 a {
-  color: #f06;
+  color: #178;
   text-decoration: none; }
 
 a:hover {
-  color: #ff66a3;
+  color: #179fb5;
   text-decoration: none; }
 
 .book-list {
+  padding: 1em;
   max-width: 45em;
   margin: 1em auto;
   display: flex;
@@ -28,26 +29,52 @@ a:hover {
     background-color: #999; }
 
 .book-article {
+  padding: 1em;
   min-height: 8em;
   margin: 0.5em 0;
   display: flex; }
-  .book-article__cover {
+  .book-article .book-cover {
     width: 25%;
     height: auto;
     max-height: 100%; }
-  .book-article__details {
+  .book-article .book-details {
     margin: 0 1em;
     width: 100%; }
-  .book-article__title {
-    color: #f06; }
+  .book-article .book-title {
+    color: #178; }
 
-.card, .book-list, .book-article, .search-form {
-  padding: 1em; }
-
-.search-form {
-  max-width: 45em;
-  margin: 0 auto; }
-  .search-form input {
-    display: block; }
+.hero {
+  position: relative;
+  min-height: 30em;
+  width: 100%;
+  background-position: center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.3)), url("https://source.unsplash.com/6pO3QFkk7hQ/1920x1080"); }
+  .hero .search-area {
+    padding: 1em;
+    border-radius: 1em;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    min-width: 30em;
+    text-align: center;
+    background-color: #fff; }
+    .hero .search-area input {
+      display: block;
+      width: 100%;
+      margin: 0.5em 0; }
+    .hero .search-area .btn {
+      background-color: #178;
+      color: #fff;
+      border: none;
+      border-radius: 1em;
+      padding: 0.5em 1em;
+      margin: 0.5em 0;
+      transition: background-color 0.2s ease-in-out; }
+    .hero .search-area .btn:hover {
+      background-color: #179fb5; }
 
 /*# sourceMappingURL=index.css.map */
