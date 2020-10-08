@@ -12,7 +12,7 @@ const SearchForm = (props) => {
   const queryString = () => {
     var str = "";
     if (typeof title !== "undefined") {
-      str += title;
+      str += "+intitle:" + title;
     }
     if (typeof author !== "undefined" && author !== "") {
       str += "+inauthor:" + author;
