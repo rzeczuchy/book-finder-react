@@ -5,7 +5,7 @@ const BookArticle = (props) => {
     <article className="book-article">
       <img
         className="book-article__cover"
-        src="{props.cover}"
+        src={props.cover}
         alt="Book cover"
       ></img>
       <div className="book-article__details">
