@@ -17,6 +17,14 @@ const LoadingMessage = () => {
   );
 };
 
+const NoResults = () => {
+  return (
+    <div className="no-results">
+      <p>Your search returned no results. Sorry :(</p>
+    </div>
+  );
+};
+
 const BookList = (props) => {
   if (Array.isArray(props.books)) {
     console.log(props.books);
@@ -39,7 +47,7 @@ const BookList = (props) => {
       </div>
     );
   } else {
-    return <></>;
+    return <NoResults />;
   }
 };
 

@@ -76,4 +76,8 @@ a:hover {
     .hero .search-area .btn:hover {
       background-color: #179fb5; }
 
+.no-results {
+  margin: 2em;
+  text-align: center; }
+
 /*# sourceMappingURL=index.css.map */
