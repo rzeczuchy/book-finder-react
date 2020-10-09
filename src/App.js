@@ -7,6 +7,7 @@ const BOOKS_API_KEY = process.env.REACT_APP_GOOGLE_API_KEY;
 const queryUrl = (queryStr) => {
   var url = "https://www.googleapis.com/books/v1/volumes?q=";
   url += queryStr;
+  url += "&maxResults=40";
   url += "&key=";
   url += BOOKS_API_KEY;
   return url;
