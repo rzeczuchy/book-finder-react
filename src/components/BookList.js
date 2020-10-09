@@ -27,7 +27,6 @@ const NoResults = () => {
 
 const BookList = (props) => {
   if (Array.isArray(props.books)) {
-    console.log(props.books);
     return (
       <div className="book-list">
         {props.books.map((book, i) => {
