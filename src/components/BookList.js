@@ -1,16 +1,7 @@
 import React from "react";
 import BookArticle from "./BookArticle";
+import { joinArray, shortenString } from "./helpers";
 import LazyLoad from "react-lazyload";
-
-const shortenDescription = (desc, n) => {
-  return typeof desc !== "undefined" && desc.length > n
-    ? desc.substr(0, n - 1) + "..."
-    : desc;
-};
-
-const joinAuthors = (authors) => {
-  return Array.isArray(authors) ? authors.join(", ") : "Unlisted";
-};
 
 const getThumbnail = (book) => {
   return typeof book.volumeInfo.imageLinks !== "undefined"
@@ -37,13 +28,10 @@ const BookList = (props) => {
               <BookArticle
                 key={i}
                 cover={getThumbnail(book)}
-                title={book.volumeInfo.title}
+                title={shortenString(book.volumeInfo.title, 100)}
                 infoLink={book.volumeInfo.infoLink}
-                authors={joinAuthors(book.volumeInfo.authors)}
-                description={shortenDescription(
-                  book.volumeInfo.description,
-                  160
-                )}
+                authors={joinArray(book.volumeInfo.authors, 5, "Not listed")}
+                description={shortenString(book.volumeInfo.description, 160)}
               />
             </LazyLoad>
           );
