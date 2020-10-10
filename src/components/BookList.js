@@ -1,11 +1,11 @@
 import React from "react";
 import BookArticle from "./BookArticle";
-import { joinArray, shortenString } from "./helpers";
+import { joinArray, shortenString, replaceHttp } from "./helpers";
 import LazyLoad from "react-lazyload";
 
 const getThumbnail = (book) => {
   return typeof book.volumeInfo.imageLinks !== "undefined"
-    ? book.volumeInfo.imageLinks.thumbnail
+    ? replaceHttp(book.volumeInfo.imageLinks.thumbnail)
     : null;
 };
 
@@ -36,7 +36,7 @@ const BookList = (props) => {
                 key={i}
                 cover={getThumbnail(book)}
                 title={shortenString(book.volumeInfo.title, 100)}
-                infoLink={book.volumeInfo.infoLink}
+                infoLink={replaceHttp(book.volumeInfo.infoLink)}
                 authors={joinArray(book.volumeInfo.authors, 5, "Not listed")}
                 description={shortenString(book.volumeInfo.description, 160)}
               />

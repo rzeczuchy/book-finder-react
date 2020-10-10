@@ -13,3 +13,7 @@ export const joinArray = (arr, maxValues, undefMessage) => {
   }
   return undefMessage;
 };
+
+export const replaceHttp = (url) => {
+  return typeof url === "string" ? url.replace(/^http:\/\//i, "https://") : "";
+};
