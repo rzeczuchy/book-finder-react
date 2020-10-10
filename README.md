@@ -2,8 +2,11 @@
 
 The book-finder-react sample is a React app which searches for volumes in the Google Books API.
 
+See live here: https://boring-darwin-0dc906.netlify.app/
+
 ## Tech used
-Frontend: React, JavaScript \
+
+Frontend: React, JS, SCSS \
 Testing: Jest, Enzyme
 
 ## Starting up
@@ -12,7 +15,7 @@ Clone the repository and open the root folder.
 
 Install dependencies using `npm install`.
 
-Start the app using  `npm start`.
+Start the app using `npm start`.
 
 Run tests using `npm test`.
 
