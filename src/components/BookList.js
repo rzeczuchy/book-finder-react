@@ -37,7 +37,7 @@ const BookList = (props) => {
                 cover={getThumbnail(book)}
                 title={shortenString(book.volumeInfo.title, 100)}
                 infoLink={replaceHttp(book.volumeInfo.infoLink)}
-                authors={joinArray(book.volumeInfo.authors, 5, "Not listed")}
+                authors={joinArray(book.volumeInfo.authors, 3, "Author unlisted")}
                 description={shortenString(book.volumeInfo.description, 160)}
               />
             </LazyLoad>

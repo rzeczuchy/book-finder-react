@@ -29,7 +29,7 @@ const SearchForm = (props) => {
     <section className="hero">
       <div className="search-area">
         <h1>Search for books</h1>
-        <p className="search-subtitle">You can fill in one or more of the fields below to search for volumes in the Google Books API.</p>
+        <p className="search-subtitle">Fill in one or more of the fields below to search for volumes in the Google Books API.</p>
         <form className="search-form">
           <input
             onChange={(e) => setGeneral(e.target.value)}

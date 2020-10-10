@@ -51,18 +51,23 @@ a:hover {
   display: flex;
 
   .book-cover {
+    display: block;
+    margin-right: 2em;
     width: 25%;
     height: auto;
     max-height: 100%;
   }
 
   .book-details {
-    margin: 0 1em;
     width: 100%;
   }
 
   .book-title {
     color: $primary;
+  }
+
+  .book-authors {
+    margin-bottom: 1em;
   }
 }
 
@@ -84,7 +89,8 @@ a:hover {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    min-width: 30em;
+    width: 80%;
+    max-width: 30em;
     text-align: center;
     background-color: $light;
 
@@ -109,7 +115,7 @@ a:hover {
 
     .search-subtitle {
       color: $muted;
-      padding: 1em;
+      margin: 2em auto;
     }
   }
 }
@@ -117,4 +123,22 @@ a:hover {
 .no-results {
   margin: 2em;
   text-align: center;
+}
+
+@media screen and (max-width: 700px) {
+  .book-article {
+    display: block;
+    text-align: center;
+
+    .book-cover {
+      display: block;
+      width: 8em;
+      clear: both;
+      margin: 0 auto 1em auto;
+    }
+
+    .book-description {
+      text-align: left;
+    }
+  }
 }

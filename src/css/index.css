@@ -34,14 +34,17 @@ a:hover {
   margin: 0.5em 0;
   display: flex; }
   .book-article .book-cover {
+    display: block;
+    margin-right: 2em;
     width: 25%;
     height: auto;
     max-height: 100%; }
   .book-article .book-details {
-    margin: 0 1em;
     width: 100%; }
   .book-article .book-title {
     color: #178; }
+  .book-article .book-authors {
+    margin-bottom: 1em; }
 
 .hero {
   position: relative;
@@ -59,7 +62,8 @@ a:hover {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    min-width: 30em;
+    width: 80%;
+    max-width: 30em;
     text-align: center;
     background-color: #fff; }
     .hero .search-area input {
@@ -77,10 +81,22 @@ a:hover {
       background-color: #179fb5; }
     .hero .search-area .search-subtitle {
       color: #999;
-      padding: 1em; }
+      margin: 2em auto; }
 
 .no-results {
   margin: 2em;
   text-align: center; }
+
+@media screen and (max-width: 700px) {
+  .book-article {
+    display: block;
+    text-align: center; }
+    .book-article .book-cover {
+      display: block;
+      width: 8em;
+      clear: both;
+      margin: 0 auto 1em auto; }
+    .book-article .book-description {
+      text-align: left; } }
 
 /*# sourceMappingURL=index.css.map */
