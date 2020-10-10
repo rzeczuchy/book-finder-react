@@ -75,6 +75,9 @@ a:hover {
       margin: 0.5em 0; }
     .hero .search-area .btn:hover {
       background-color: #179fb5; }
+    .hero .search-area .search-subtitle {
+      color: #999;
+      padding: 1em; }
 
 .no-results {
   margin: 2em;
