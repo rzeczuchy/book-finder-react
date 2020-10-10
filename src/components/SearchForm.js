@@ -1,6 +1,8 @@
 import React, { useState } from "react";
+import { checkIfNonEmptyString } from "./helpers";
 
 const SearchForm = (props) => {
+  const [general, setGeneral] = useState("");
   const [title, setTitle] = useState("");
   const [author, setAuthor] = useState("");
 
@@ -10,14 +12,17 @@ const SearchForm = (props) => {
   };
 
   const queryString = () => {
-    var str = "";
-    if (typeof title !== "undefined") {
-      str += "+intitle:" + title;
+    var queryArr = [];
+    if (checkIfNonEmptyString(general)) {
+      queryArr.push(general);
     }
-    if (typeof author !== "undefined" && author !== "") {
-      str += "+inauthor:" + author;
+    if (checkIfNonEmptyString(title)) {
+      queryArr.push("intitle:" + title);
     }
-    return str;
+    if (checkIfNonEmptyString(author)) {
+      queryArr.push("inauthor:" + author);
+    }
+    return queryArr.join("+");
   };
 
   return (
@@ -26,16 +31,22 @@ const SearchForm = (props) => {
         <h1>Search for books:</h1>
         <form className="search-form">
           <input
+            onChange={(e) => setGeneral(e.target.value)}
+            name="general"
+            value={general}
+            placeholder="In all fields"
+          />
+          <input
             onChange={(e) => setTitle(e.target.value)}
             name="title"
             value={title}
-            placeholder="Title or part of a title."
+            placeholder="In title"
           />
           <input
             onChange={(e) => setAuthor(e.target.value)}
             name="author"
             value={author}
-            placeholder="Author name or part of a name."
+            placeholder="In author"
           />
           <button className="btn" onClick={submitSearch}>
             Submit

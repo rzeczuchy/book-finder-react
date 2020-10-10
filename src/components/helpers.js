@@ -1,3 +1,7 @@
+export const checkIfNonEmptyString = (checked) => {
+  return typeof checked === "string" && checked !== "";
+};
+
 export const shortenString = (desc, n) => {
   return typeof desc !== "undefined" && desc.length > n
     ? desc.substr(0, n - 1) + "[...]"
