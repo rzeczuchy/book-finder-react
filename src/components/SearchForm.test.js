@@ -5,8 +5,10 @@ import { shallow } from "enzyme";
 describe("SearchForm rendering", () => {
   test("inputs render", () => {
     const form = shallow(<SearchForm />);
+    const generalInput = <input name="general" />;
     const titleInput = <input name="title" />;
     const authorInput = <input name="author" />;
+    expect(form.containsMatchingElement(generalInput)).toBeTruthy();
     expect(form.containsMatchingElement(titleInput)).toBeTruthy();
     expect(form.containsMatchingElement(authorInput)).toBeTruthy();
   });
