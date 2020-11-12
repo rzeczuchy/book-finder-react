@@ -68,6 +68,9 @@ a:hover {
     background-color: #fff; }
     .hero .search-area input {
       display: block;
+      border: 1px solid #999;
+      border-radius: 0.5em;
+      padding: 0.5em;
       width: 100%;
       margin: 0.5em 0; }
     .hero .search-area .btn {
