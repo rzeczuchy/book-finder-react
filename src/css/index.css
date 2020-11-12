@@ -68,12 +68,16 @@ a:hover {
     background-color: #fff; }
     .hero .search-area input {
       display: block;
+      font-size: inherit;
+      font-family: inherit;
       border: 1px solid #999;
       border-radius: 0.5em;
       padding: 0.5em;
       width: 100%;
       margin: 0.5em 0; }
     .hero .search-area .btn {
+      font-size: inherit;
+      font-family: inherit;
       background-color: #178;
       color: #fff;
       border: none;

@@ -96,6 +96,8 @@ a:hover {
 
     input {
       display: block;
+      font-size: inherit;
+      font-family: inherit;
       border: 1px solid $muted;
       border-radius: 0.5em;
       padding: 0.5em;
@@ -104,6 +106,8 @@ a:hover {
     }
 
     .btn {
+      font-size: inherit;
+      font-family: inherit;
       background-color: $primary;
       color: $light;
       border: none;
