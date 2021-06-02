@@ -3,7 +3,7 @@ import App from "./App";
 import { shallow } from "enzyme";
 
 describe("App rendering", () => {
-  test("app renders (sanity check)", () => {
+  test("app renders without crashing", () => {
     shallow(<App />);
   });
 });
