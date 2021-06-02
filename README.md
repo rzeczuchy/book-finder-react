@@ -13,10 +13,20 @@ Testing: Jest, Enzyme
 
 Clone the repository and open the root folder.
 
-Install dependencies using `npm install`.
+Install dependencies using `npm install` .
 
-Start the app using `npm start`.
+Start the app using `npm start` .
 
-Run tests using `npm test`.
+Run tests using `npm test` .
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app). Read full guide [here](https://github.com/facebook/create-react-app/blob/master/packages/cra-template/template/README.md).
+
+## Updating dependencies
+
+Dependencies in the project should be kept up to date. To update all dependencies run:
+
+```
+npm i -g npm-check-updates
+ncu -u
+npm install
+```
