@@ -30,3 +30,13 @@ npm i -g npm-check-updates
 ncu -u
 npm install
 ```
+
+## Unit tests
+
+The application is unit tested with Jest and Enzyme. All .js files aside from index.js should have over 80% test coverage.
+
+To check test coverage for all files, run:
+
+```
+npm test -- --coverage --watchAll=false
+```
