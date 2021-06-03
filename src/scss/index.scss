@@ -132,6 +132,30 @@ a:hover {
   text-align: center;
 }
 
+.placeholder {
+  margin: 2em;
+  text-align: center;
+}
+
+.load-more {
+  margin-bottom: 2em;
+  text-align: center;
+  .btn {
+    font-size: inherit;
+    font-family: inherit;
+    background-color: $primary;
+    color: $light;
+    border: none;
+    border-radius: 1em;
+    padding: 0.5em 1em;
+    margin: 0.5em 0;
+  }
+  
+  .btn:hover {
+    background-color: $highlight;
+  }
+}
+
 @media screen and (max-width: 700px) {
   .book-article {
     display: block;
