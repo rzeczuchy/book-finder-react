@@ -19,41 +19,50 @@ const queryUrl = (query) => {
   return url;
 };
 
+const sendRequest = (query, onLoad) => {
+  const request = new XMLHttpRequest();
+  const url = queryUrl(query);
+  request.open("GET", url, true);
+  request.onload = (e) => {
+    onLoad(request);
+  }
+  request.send();
+}
+
+const requestSuccessful = (request) => {
+  return request.readyState === 4 && request.status === 200;
+}
+
+const apiResponseJson = (request) => {
+  return JSON.parse(request.response);
+}
+
 const App = () => {
   const [books, setBooks] = useState([]);
 
   const onSearch = (query) => {
     queryStr = "";
     startIndex = 0;
-    const request = new XMLHttpRequest();
-    const url = queryUrl(query);
-    request.open("GET", url, true);
-    request.onload = (e) => {
-      if (request.readyState === 4 && request.status === 200) {
-        const data = JSON.parse(request.response);
+    const onLoad = (request) => {
+      if (requestSuccessful(request)) {
         setBooks(() => {
-          return data["items"];
+          return apiResponseJson(request)["items"];
         });
       }
     };
-    request.send();
+    sendRequest(query, onLoad);
   };
 
   const onLoadMore = () => {
-    console.log("loading more");
     startIndex += maxResults;
-    const request = new XMLHttpRequest();
-    const url = queryUrl(queryStr);
-    request.open("GET", url, true);
-    request.onload = (e) => {
-      if (request.readyState === 4 && request.status === 200) {
-        const data = JSON.parse(request.response);
+    const onLoad = (request) => {
+      if (requestSuccessful(request)) {
         setBooks(() => {
-          return books.concat(data["items"]);
+          return books.concat(apiResponseJson(request)["items"]);
         });
       }
     };
-    request.send();
+    sendRequest(queryStr, onLoad);
   }
 
   return (
